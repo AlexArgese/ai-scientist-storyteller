@@ -1,0 +1,36 @@
+### 1. Vessel Verse
+
+Vessel Verse is a large-scale dataset for brain vessel annotation. It gathers 1,130 annotated images from three public datasets, covering different neurovascular imaging modalities.
+
+### 2. Collaborative Framework
+
+In addition to the dataset, Vessel Verse introduces a novel framework that allows for multi-expert annotations and refinements. Its key components include version control, consensus generation, and a user-friendly interface.
+
+### 3. Multi-expert Annotations
+
+The framework supports multiple annotation protocols, enabling users to select the annotation style that best fits their needs.
+
+### 4. Consensus Generation
+
+Vessel Verse offers a STAPLE-based consensus mechanism, allowing users to combine annotations from different experts or algorithms.
+
+### 5. Version Control
+
+To ensure annotation quality and traceability, Vessel Verse implements version control. It tracks annotation changes and allows for expert review and correction.
+
+###### Acknowledgements.
+
+We would like to thank the reviewers for their valuable feedback and suggestions that helped to improve the quality of this paper. This work was supported by the German Research Foundation (DFG) through the Cluster of Excellence 3D Mapping of Complex Systems (EXC 2089/1–397759335) and the Excellence Strategy through the University Research Priority Program “Artificial Intelligence” (AI@Heidelberg) at Heidelberg University (EXC-2064/1–390631456). It was further supported by the Heidelberg University Excellence Graduate Programs (EGP) CellNetworks and ICB. This research has been conducted using the computing resources of the Gauss Center for Supercomputing (GCS) under the grant
+PR534, and the Allen Institute for AI supercomputer, funded by Paul G. Allen Philanthropies. M.V. acknowledges support from the Alexander von Humboldt Foundation through the Humboldt Research Fellowship for Postdoctoral Researchers. S.C.H.R.K. acknowledges support from the European Union Horizon 2020 Research and Innovation Programme under Grant Agreement No. 945089 (AI4P). A.F.F. acknowledges support from the Dutch Research Council (NWO) under Grant 024.003.005. F.C. is supported by the German Research Foundation (DFG, SCHI 2465/3-1). Computational resources for this work were provided by the Heidelberg University Research Cloud (HRC) and the German Climate Computer (DKRZ). The HRC is a service offered by the Faculty of Computer Science at Heidelberg University, funded by the German Federal Ministry of Education and Research (BMBF) through the initiative "Hilfe zum Selbsthelfen im digitalen Zeitalter" (Grant 033LC221A). The DKRZ is funded by the German Federal Ministry of Education and Research (BMBF).
+
+###### Conflicts of Interest:
+
+The authors declare no conflicts of interest.
+
+###### Ethics Statements:
+
+Ethical review and approval was not required for this study, as it used only publicly available datasets. The patient data used in this study is de-identified. Informed consent was obtained from all subjects involved in the original studies.
+
+###### Author Contributions:
+
+Conceptualization, M.V., A.F.F., F.C., S.M., D.M., S.W., C.R., N.K., M.S., C.S., R.K., N.M., F.L.R., C.B., C.H., M.S., N.N., S.K., D.M., T.B.P., C.M., A.S., N.P., N.S., N.S., N.B., N.v.d.B., A.S., N.A., R.S., S.P., A.M., N.M., N.P., M.M., P.V., M.B., C.J., M.O., A.R., R.B., N.K., P.V., M.B., C.J., M.O., A.R., R.B., A.K., S.S., M.R., N.K., Y.Z., T.C., A.C., N.M., V.N., E.B., A.S., S.B., S.S., M.R., Y.Z., T.C., A.C., N.M., V.N., E.B., S.R., N.S., A.T., C.S., H.H., M.W., D.S., F.M., C.v.d.B., A.M., M.S., O.S., R.P., C.D., M.S., H.C., R.M., A.M., N.P., M.M.,

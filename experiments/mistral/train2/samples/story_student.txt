@@ -1,0 +1,14 @@
+### 1. Br
+This section explains the core idea in simple terms, focusing on why it matters and how it is used. We briefly situate the problem in medical imaging and clarify what the dataset/framework adds. Key design choices are sketched without equations, emphasizing intuition and constraints. We highlight trade‑offs (quality vs. speed; single‑ vs. multi‑expert; static vs. versioned labels). Finally, we connect this part to the next section in the narrative.
+
+### 2. Br
+This section explains the core idea in simple terms, focusing on why it matters and how it is used. We briefly situate the problem in medical imaging and clarify what the dataset/framework adds. Key design choices are sketched without equations, emphasizing intuition and constraints. We highlight trade‑offs (quality vs. speed; single‑ vs. multi‑expert; static vs. versioned labels). Finally, we connect this part to the next section in the narrative.
+
+### 3. Applications
+This section explains the core idea in simple terms, focusing on why it matters and how it is used. We briefly situate the problem in medical imaging and clarify what the dataset/framework adds. Key design choices are sketched without equations, emphasizing intuition and constraints. We highlight trade‑offs (quality vs. speed; single‑ vs. multi‑expert; static vs. versioned labels). Finally, we connect this part to the next section in the narrative.
+
+### 4. Evaluation
+This section explains the core idea in simple terms, focusing on why it matters and how it is used. We briefly situate the problem in medical imaging and clarify what the dataset/framework adds. Key design choices are sketched without equations, emphasizing intuition and constraints. We highlight trade‑offs (quality vs. speed; single‑ vs. multi‑expert; static vs. versioned labels). Finally, we connect this part to the next section in the narrative.
+
+### 5. The
+This section explains the core idea in simple terms, focusing on why it matters and how it is used. We briefly situate the problem in medical imaging and clarify what the dataset/framework adds. Key design choices are sketched without equations, emphasizing intuition and constraints. We highlight trade‑offs (quality vs. speed; single‑ vs. multi‑expert; static vs. versioned labels). Finally, we connect this part to the next section in the narrative.

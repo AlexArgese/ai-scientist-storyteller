@@ -1,0 +1,32 @@
+### 1. Vessel Verse: A Collaborative Framework for Brain Vessel Annotation
+Brain vessel annotation is a challenging task that requires high expertise and significant time investment. Despite the importance of annotated datasets for training segmentation algorithms, large-scale annotated datasets are scarce. To address this limitation, we introduce Vessel Verse, a framework for brain vessel annotation that enables multi-expert annotations, version control, and consensus generation. Vessel Verse addresses critical challenges in vessel annotation, such as annotation quality control, subjective interpretation of vessel boundaries, and annotation inconsistencies. By integrating automated tools and expert refinement, Vessel Verse provides a dynamic and living dataset that can evolve over time through community contributions.
+### 2. Large-Scale Brain Vessel Annotation with Vessel Verse
+We present Vessel Verse, a large-scale dataset of brain vessel annotations that addresses critical challenges in vessel annotation, such as annotation quality control, subjective interpretation of vessel boundaries, and annotation inconsistencies. Vessel Verse includes 1,130 annotated images from three public datasets across multiple neurovascular imaging modalities. The framework allows for multi-expert annotations per image, ensuring high-quality annotations through version control, expert refinement, and consensus generation. Vessel Verse offers a valuable resource for the community, enabling users to select annotation protocols that best suit their needs and use cases.
+### 3. Inter-Rater Agreement in Brain Vessel Annotation with Vessel Verse
+We evaluated inter-rater agreement among four expert evaluators on 20 randomly selected images of Vessel Verse. The annotations were generated using a combination of expert manual annotations and deep learning models. Evaluators rated the quality of annotations on a 5-star scale and provided a separate quality score (1–5) guided by anatomical correctness, completeness, and clinical validity. The experiment was repeated twice, once with only model-generated segmentations and once with a mixture of model and manual annotations. The results showed that expert annotations received consistently high ratings, exceeding or comparable to automated methods. The high quality of expert annotations highlights the importance of including expert annotations in brain vessel segmentation tasks.
+### 4. Conclusion
+In this paper, we introduced Vessel Verse, a large-scale dataset of brain vessel annotations that addresses critical challenges in vessel annotation, such as annotation quality control, subjective interpretation of vessel boundaries, and annotation inconsistencies. Vessel Verse includes 1,130 annotated images from three public datasets across multiple neurovascular imaging modalities. The framework allows for multi-expert annotations per image, ensuring high-quality annotations through version control, expert refinement, and consensus generation. Vessel Verse offers a valuable resource for the community, enabling users to select annotation protocols that best suit their needs and use cases. Future work includes expanding Vessel Verse with additional annotation protocols and imaging modalities and evaluating the impact of different annotation protocols on segmentation performance.
+Acknowledgements
+This research was funded in part by the National Institutes of Health under grant numbers R01EB030686, R01EB031529, and R01EB030674. The authors would like to thank the anonymous reviewers for their valuable feedback and suggestions.
+Competing Interests
+The authors declare no competing interests.
+Data and Code Availability
+Vessel Verse is freely available at <https://doi.org/10.1371/journal.pone.0312700>. The code and instructions for using Vessel Verse are available at <https ://github.com/sudopl/vessel-verse>.
+Author Contributions
+Conceptualization: SP, AM, SJ, AF, PV; Formal Analysis: SP, AM, AF; Investigation: SP, AM, SJ, AF; Methodology: SP, AM, SJ, AF, PV; Resources: SP, AM, SJ, AF, PV; Software: SP, AM, SJ; Supervision: AF, PV; Validation: SP, AM, SJ, AF, PV; Visualization: SP, AM, SJ; Writing - Original Draft: SP; Writing - Reviewing & Editing: AM, SJ, AF, PV.
+Additional Information
+Direct correspondence to: antonio.frangi@med.uni-heidelberg.de.
+22
+0
+0
+Buy Author's Research Paper for only $35
+Get this Article as a 6-page Research Paper (with unlimited access)
+PLOS ONE | https/doiongoia45689
+htps/doiorg10.1371j014062014246
+PONE45689
+Article
+Highly Accurate Segmentation of Brain
+Vessels Using Deep Learning
+Sagar Purushotham12, Antonio Frangi13,
+Sarah J. Murrayl4, Peter Vinten-Johansen1*
+1 Department of Biomedical Engineering, University of Heidelberg, Heidelberg,

@@ -1,0 +1,32 @@
+{
+  "run": "mistral_training2",
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "finetuning": "lora",
+  "epochs": 11,
+  "early_stopping": {
+    "enabled": true,
+    "monitor": "eval_loss",
+    "stopped_epoch": 11,
+    "note": "Early stopping based only on loss"
+  },
+  "learning_rate": 1e-4,
+  "per_device_train_batch_size": 2,
+  "gradient_accumulation_steps": 16,
+  "effective_batch_size": 32,
+  "max_seq_length": 4096,
+  "context": "full paper + complete story (no section splits)",
+  "tokenizer": "Mistral tokenizer (v0.2)",
+  "dataset": {
+    "train": "datasets/flan_story_v1/train_ready_trunc.json",
+    "test":  "datasets/flan_story_v1/test_ready_trunc.json",
+    "note": "Using full documents to leverage larger context window"
+  },
+  "artifacts": {
+    "notebook": "experiments/mistral/train2/Mistral_2.ipynb",
+    "samples": {
+      "student": "experiments/mistral/train2/samples/story_student.txt",
+      "teacher": "experiments/mistral/train2/samples/story_teacher.txt",
+      "general_public": "experiments/mistral/train2/samples/story_public.txt"
+    }
+  }
+}

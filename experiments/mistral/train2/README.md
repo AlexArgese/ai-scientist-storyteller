@@ -15,6 +15,8 @@ Use full-document inputs to exploit the larger context window and test if end-to
 - ROUGE-1 **0.2218** • ROUGE-2 **0.0413** • ROUGE-L **0.1133** • BLEU **0.0189** • BERTScore-F1 **−0.1524** • Avg FKGL **13.29**
 
 ## Artifacts
+
+Sample outputs included (student/teacher/general_public). Some drift (citations/acknowledgments) is deliberately kept to document limitations observed in T2.
 - Notebook: `Mistral_2.ipynb`
 - Samples: `samples/predictions_head.json`
 
