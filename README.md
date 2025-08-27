@@ -27,7 +27,7 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 **Training 2 (QLoRA+LoRA, flan-t5-xl)**  
 - Epochs: 3, LR=1e-4, eff. batch=8, max seq len: 1024.  
 - Metrics (test): ROUGE-1 0.1239, ROUGE-2 0.0246, ROUGE-L 0.0817, BLEU ≈ 0.0039.  
-- Artifacts: `experiments/flan/train2/`.
+- Artifacts: `experiments/flan/train2/ (script: scripts/flan_t5_train2.py)`.
 
 **Training 3 (QLoRA+LoRA, flan-t5-large, chunked)**  
 - Epochs: 5, LR=2e-4, eff. batch=8, max seq len: 1024 (chunked).  
