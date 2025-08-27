@@ -8,7 +8,7 @@
 
 **Scripts:**  
 - training `scripts/flan_t5_train4.py`  
-- evaluation `scripts/eval_longt5_lora.py`  
-- inference `scripts/generate_story_longt5.py`  
+- evaluation `scripts/flan_t5_eval_longt5_lora.py`  
+- inference `scripts/flan_t5_infer_longt5.py`  
 
 **Artifacts:** see `samples/` (train log head, paper head, one generated sample).
