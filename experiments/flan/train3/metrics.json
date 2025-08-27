@@ -1,0 +1,9 @@
+{
+  "rouge1": 0.134,
+  "rouge2": 0.024,
+  "rougeL": 0.090,
+  "bleu": 0.00285,
+  "brevity_penalty": 0.088,
+  "length_ratio": 0.29,
+  "notes": "Outputs often too short; chunking 1024 in/out; QLoRA+LoRA r32/alpha64."
+}

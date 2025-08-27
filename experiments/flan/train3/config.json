@@ -1,0 +1,26 @@
+{
+  "run": "flan-t5_training3",
+  "base_model": "google/flan-t5-large",
+  "finetuning": "QLoRA+LoRA (4-bit nf4, bf16 compute)",
+  "lora": { "r": 32, "alpha": 64, "dropout": 0.1, "bias": "none" },
+  "epochs": 5,
+  "learning_rate": 2e-4,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "effective_batch_size": 8,
+  "max_source_length": 1024,
+  "max_target_length": 1024,
+  "chunking": true,
+  "predict_with_generate": true,
+  "fp16": true,
+  "dataset": {
+    "train": "../../datasets/flan_story_v1/train_ready_trunc.json",
+    "test":  "../../datasets/flan_story_v1/test_ready_trunc.json",
+    "val_split_from_train": 0.125,
+    "note": "~70/10/20 overall via split of the 80% train"
+  },
+  "evaluation": {
+    "metrics": ["ROUGE-1","ROUGE-2","ROUGE-L","BLEU"],
+    "artifacts": ["samples/preds_test_head.json"]
+  }
+}

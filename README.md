@@ -29,6 +29,11 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 - Metrics (test): ROUGE-1 0.1239, ROUGE-2 0.0246, ROUGE-L 0.0817, BLEU ≈ 0.0039.  
 - Artifacts: `experiments/flan/train2/`.
 
+**Training 3 (QLoRA+LoRA, flan-t5-large, chunked)**  
+- Epochs: 5, LR=2e-4, eff. batch=8, max seq len: 1024 (chunked).  
+- Metrics (test): ROUGE-1 0.134, ROUGE-2 0.024, ROUGE-L 0.090, BLEU ≈ 0.00285.  
+- Artifacts: `experiments/flan/train3/`.
+
 ## Notes
 - Large models/checkpoints are not stored here.
 - Full experiment log is kept on Notion.
