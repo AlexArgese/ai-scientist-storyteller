@@ -9,5 +9,5 @@
     "test":  "../../datasets/flan_story_v1/test_ready_trunc.json"
   },
   "generation_params_eval": { "max_new_tokens": 256, "do_sample": false },
-  "notes": "Early Mistral run; outputs short; weak semantic alignment."
+  "notes": "Early Mistral run; outputs short; weak semantic alignment. No predictions saved for this run."
 }
