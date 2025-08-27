@@ -14,3 +14,4 @@ logs/
 
 # Keep only tiny samples; avoid full datasets
 data/
+datasets/
