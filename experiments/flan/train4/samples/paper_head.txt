@@ -1,0 +1,80 @@
+VesselVerse: A Dataset and Collaborative
+Framework for Vessel Annotation
+Anonymized Authors
+Anonymized Affiliations
+email@anonymized.com
+Abstract. This paper is not about a novel method. Instead, it intro-
+duces VesselVerse, a large-scale annotation dataset and collaborative
+framework for brain vessel annotation. It addresses the critical challenge
+of data annotation availability in supervised learning segmentation and
+provides a valuable resource for the community. VesselVerse represents
+the largest public release of brain vessel annotations to date, compris-
+ing 1,130 annotated images from three public datasets across multiple
+neurovascular imaging modalities. Its design allows for multi-expert an-
+notations per image, accounting for variations across diverse annotation
+protocols. Furthermore, the framework facilitates the inclusion of new
+annotations and refinements to existing ones, making the dataset dy-
+namic. To enhance annotation reliability, VesselVerse integrates tools
+for consensus generation and version control mechanisms, enabling the
+reversion of errors introduced during annotation refinement. We demon-
+strate VesselVerse’s usability by assessing inter-rater agreement among
+four expert evaluators.
+Keywords: Brain vessel annotation· Multi-expert annotation· Collab-
+orative framework.
+1 Introduction
+Image annotations are essential for developing medical image segmentation algo-
+rithms. They are critical in training supervised learning models, which typically
+require a substantial amount of paired image data and segmentation masks. Fur-
+thermore, even with the increasing use of semi-supervised, weakly supervised, or
+unsupervised methods, annotations are still needed for validating and evaluating
+the techniques that have been developed. Although the medical imaging com-
+munity has made advancements in acquiring and curating large datasets (e.g.,
+[18]), fully annotated data remain scarce, particularly for complex anatomical
+structures such as the brain’s vasculature.
+The scarcity of large, annotated datasets of brain vessels can be attributed
+to the intricate and complex nature of the 3D cerebral vasculature. Its highly
+branched structure, multi-scale representation, and often tortuous paths make
+manual annotation challenging and time-consuming. Accurately delineating in-
+dividual vessels, especially smaller ones, requires significant expertise and metic-
+ulous attention to detail. In addition to the tedious nature of the annotation
+process, differences in annotation protocols and the subjective interpretation of
+these protocols further complicate matters. Variations in how vessels are defined,
+the level of detail required, and the specific tools used can lead to discrepancies
+in vessel annotation [16], thus introducing inter-rater variability [9]. As a result,
+comprehensive annotated datasets of the brain vessels are limited, often employ
+differing annotation protocols (see Table 1) and exhibit significant variations in
+the resulting annotations (Figure 1).
+Crowdsourcing provides a promising solution for annotating large neurovas-
+cular imaging datasets while reducing annotator fatigue and errors by sharing
+the workload among experts. However, recent studies have raised concerns about
+the annotation quality achieved through crowdsourcing platforms [17]. To fully
+benefit from crowdsourcing, the complex task of vessel annotation requires qual-
+ity control mechanisms in place. These should include version control systems
+for tracking individual contributions, facilitating expert reviews, and consensus
+mechanisms for harmonizing different annotation styles and resolving discrepan-
+cies that arise from subjective interpretations of vessel boundaries.
+Although version control systems are widely adopted in software develop-
+ment, their usage and integration into medical imaging annotated datasets re-
+main limited. Open-access datasets propose final segmentation masks without
+tracking the evolution of annotations, and very few previous efforts offer mecha-
+nismstointegratemultipleexpertannotationsandrefinements[20].Open-source
+tools like ITK-Snap [24] or 3D Slicer [10] provide advanced visualization and
+analysis but lack built-in version-controlled annotation workflows.
+To address these limitations, we introduce VesselVerse, the largest release
+of brain vessel annotations to date, comprising three publicly available datasets
+totaling 1,130 annotated images from various neurovascular imaging modalities.
+VesselVerse also features a novel framework that systematically tracks anno-
+tation evolution, allows for multiple expert annotations and refinement, and
+integrates these through consensus generation. The VesselVerse dataset and
+framework can be accessed at VesselVerseDataset and VesselVerseFramework1
+.
+2 Related Works
+Neurovascular Imaging Databases. Large neurovascular imaging datasets
+like the UK Biobank (over 50,000 images) and OASIS-3 (about 3,000 images)
+lack annotations. Annotated datasets are much fewer (Table 1), and their dif-
+fering annotation styles challenge their joint use for model training, something
+COSTA [12] has addressed partially. VesselVerse offers the largest collection
+of annotations, with multiple masks that enable users to select from different
+annotation protocols or create a consensus.
+CrowdsourcingInitiatives.Crowdsourcingplatformshavebeenusedforlarge-
+scale medical imaging labeling, offering a rapid alternative to expert-driven

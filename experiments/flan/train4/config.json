@@ -1,0 +1,39 @@
+{
+  "run": "flan-t5_training4",
+  "base_model": "google/long-t5-large",
+  "finetuning": "QLoRA (4-bit) + LoRA",
+  "lora": {
+    "r": 32,
+    "alpha": 64,
+    "dropout": 0.1
+  },
+  "quantization": {
+    "bits": 4,
+    "type": "nf4",
+    "compute_dtype": "bfloat16"
+  },
+  "epochs": 30,
+  "learning_rate": 0.0002,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "effective_batch_size": 8,
+  "max_source_length": 4096,
+  "max_target_length": 1024,
+  "tokenizer": "t5-standard (no extra tokens)",
+  "notes": "Distributed run; very long training; suspected collapse.",
+  "evaluation": {
+    "metrics": [
+      "ROUGE-1",
+      "ROUGE-2",
+      "ROUGE-L",
+      "BLEU",
+      "eval_loss"
+    ],
+    "artifacts": [
+      "samples/train_log_head.txt",
+      "samples/generation_sample.txt",
+      "samples/paper_head.txt",
+      "samples/gibberish_output.txt"
+    ]
+  }
+}

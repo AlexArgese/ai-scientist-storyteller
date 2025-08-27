@@ -1,0 +1,8 @@
+{
+  "rouge1": 0.0,
+  "rouge2": 0.0,
+  "rougeL": 0.0,
+  "bleu": 0.0,
+  "eval_loss": 10.37,
+  "notes": "Training collapse after long run (~68h). Likely instability from QLoRA + small dataset + too many epochs; early stopping missing/misconfigured."
+}
