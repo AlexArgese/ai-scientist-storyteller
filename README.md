@@ -42,3 +42,8 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 ## Notes
 - Large models/checkpoints are not stored here.
 - Full experiment log is kept on Notion.
+
+### Mistral
+**Training 1 (7B Instruct v0.2, LoRA)**  
+- Metrics (test): ROUGE-1 0.2179, ROUGE-2 0.0385, ROUGE-L 0.1191, BLEU 0.0195, BERTScore-F1 −0.1280.  
+- Artifacts: `experiments/mistral/train1/` (config, metrics, notebook).

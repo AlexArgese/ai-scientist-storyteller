@@ -1,0 +1,9 @@
+{
+  "rouge1": 0.2179,
+  "rouge2": 0.0385,
+  "rougeL": 0.1191,
+  "bleu": 0.0195,
+  "bertscore_f1": -0.1280,
+  "test_size": 466,
+  "observations": "Outputs were too short and uninformative."
+}
