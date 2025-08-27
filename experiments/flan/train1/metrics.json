@@ -1,0 +1,9 @@
+{
+  "rouge1": 0.120,
+  "rouge2": 0.023,
+  "rougeL": 0.079,
+  "bleu": 0.0035,
+  "bertscore_f1": null,
+  "avg_fkgl": null,
+  "notes": "First full finetune on small dataset; low alignment/readability as expected."
+}

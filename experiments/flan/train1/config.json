@@ -1,0 +1,24 @@
+{
+  "run": "flan-t5_training1",
+  "base_model": "google/flan-t5-base",
+  "finetuning": "full_finetune",
+  "epochs": 3,
+  "learning_rate": 5e-5,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "effective_batch_size": 8,
+  "max_source_length": 1024,
+  "max_target_length": 1024,
+  "predict_with_generate": true,
+  "fp16": true,
+  "tokenizer": "t5-standard",
+  "dataset": {
+    "train": "../../datasets/flan_story_v1/train_ready_trunc.json",
+    "test":  "../../datasets/flan_story_v1/test_ready_trunc.json",
+    "samples": "../../data-samples/flan_story_v1/"
+  },
+  "evaluation": {
+    "metrics": ["ROUGE-1","ROUGE-2","ROUGE-L","BLEU","BERTScore(F1)","FKGL"],
+    "artifact_csv": "samples/evaluation_results_head.csv"
+  }
+}
