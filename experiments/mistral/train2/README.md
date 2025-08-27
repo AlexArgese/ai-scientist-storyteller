@@ -18,7 +18,9 @@ Use full-document inputs to exploit the larger context window and test if end-to
 
 Sample outputs included (student/teacher/general_public). Some drift (citations/acknowledgments) is deliberately kept to document limitations observed in T2.
 - Notebook: `Mistral_2.ipynb`
-- Samples: `samples/predictions_head.json`
+- Generation script: `scripts/mistral_generate_t2.py`
+- Samples: `samples/story_student.txt`, `samples/story_teacher.txt`, `samples/story_public.txt`
+
 
 ## Config & Metrics
 See `config.json` and `metrics.json`.
