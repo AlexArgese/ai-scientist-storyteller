@@ -1,0 +1,9 @@
+{
+  "rouge1": 0.2218,
+  "rouge2": 0.0413,
+  "rougeL": 0.1133,
+  "bleu": 0.0189,
+  "bertscore_f1": -0.1524,
+  "avg_fkgl": 13.29,
+  "notes": "Slight fluency gains vs T1; semantic alignment still weak. Metrics computed from the saved evaluation."
+}

@@ -39,11 +39,19 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 - Metrics: ROUGE/BLEU = 0, eval loss ≈ 10.37 (collapse).  
 - Artifacts: `experiments/flan/train4/` (scripts + samples).
 
-## Notes
-- Large models/checkpoints are not stored here.
-- Full experiment log is kept on Notion.
 
 ### Mistral
 **Training 1 (7B Instruct v0.2, LoRA)**  
 - Metrics (test): ROUGE-1 0.2179, ROUGE-2 0.0385, ROUGE-L 0.1191, BLEU 0.0195, BERTScore-F1 −0.1280.  
 - Artifacts: `experiments/mistral/train1/` (config, metrics, notebook).
+
+**Training 2 (LoRA, v0.2, full-doc inputs)**  
+- Metrics (test): ROUGE-1 0.2218, ROUGE-2 0.0413, ROUGE-L 0.1133, BLEU 0.0189, BERTScore-F1 −0.1524, Avg FKGL 13.29.  
+- Early stopping at epoch 11 (loss only).  
+- Artifacts: `experiments/mistral/train2/`.
+
+
+
+## Notes
+- Large models/checkpoints are not stored here.
+- Full experiment log is kept on Notion.
