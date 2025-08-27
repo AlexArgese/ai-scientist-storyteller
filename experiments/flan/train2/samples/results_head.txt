@@ -1,0 +1,50 @@
+=== ROUGE ===
+{'rouge1': np.float64(0.12389869116873473), 'rouge2': np.float64(0.02457610823944534), 'rougeL': np.float64(0.08174830077850037), 'rougeLsum': np.float64(0.0957851775540901)}
+
+=== BLEU ===
+{'bleu': 0.003956072924342516, 'precisions': [0.25456303638341593, 0.043824863237955786, 0.012872628726287264, 0.008042617581825343], 'brevity_penalty': 0.12067551057148493, 'length_ratio': 0.32106335500145533, 'translation_length': 49638, 'reference_length': 154605}
+
+--- Example 1 ---
+Input:
+Generate a story for these personas: Developer, Researcher, Student
+
+Section: Abstract
+Abstract: ABSTRACT This paper describes Tacotron 2, a neural network architecture for speech synthesis directly from text. The system is composed of a recurrent sequence-to-sequence feature prediction network that maps character embeddings to mel-scale spectrograms, followed by a modified WaveNet model acting as a vocoder to synthesize time-domain waveforms from those spectrograms. Our model achieves a mean opinion score (MOS) of 4.53 comparable to a MOS of 4.58 for professionally recorded speech. To validate our design choices, we present ablation studies of key components of our system and evaluate the impact of using mel spectrograms as the conditioning input to WaveNet instead of linguistic, duration, and F0 features. We further show that using this compact acoustic intermediate representation allows for a significant reduction in the size of the WaveNet architecture. Index Terms— Tacotron 2, WaveNet, text-to-speech
+
+Output generated:
+This paper describes Tacotron 2, a neural network architecture for speech synthesis directly from text. The system is composed of a recurrent sequence-to-sequence feature prediction network that maps character embeddings to mel-scale spectrograms, followed by a modified WaveNet model acting as a vocoder to synthesize time-domain waveforms from those spectrograms. Our model achieves a mean opinion score (MOS) of 4.53 comparable to a MOS of 4.58 for professionally recorded speech. To validate our design choices, we present ablation studies of key components of our system and evaluate the impact of using mel spectrograms as the conditioning input to WaveNet instead of linguistic, duration, and F0 features. We further show that using this compact acoustic intermediate representation allows for a significant reduction in the size of the WaveNet architecture.
+
+Output correct:
+Generation of linguistic features (phonemes, duration) that are extracted from the text. Generation of features that represent corresponding extracted speech signals (cepstrum, frequency, linear spectrogram, Mel spectrogram).
+Deep neural networks are powerful tools that can approximate an arbitrarily complex function – bring some space of input data X into output space Y. In the context of our task, X and Y will be text and audio recordings with speech, respectively.
+We chose the LJSpeech dataset as a training data set, which contains 13’100 audio tracks, 2-10 seconds each, and a text file corresponding to each record (aka lyrics). Based on the above-mentioned transformations, the sound is encoded into the Mel-spectrogram. The text is then tokenized and turned into a sequence of integers. Additionally we normalized all texts, transcribed all numbers into words (“5” —> “five”), and decoded abbreviations (“Mrs. Robinson” —> “Misses Robinson”). So, after preprocessing, we received sets of arrays of numerical sequences and Mel-spectrograms recorded as .npy files.
+In order to match all the dimensions in the tensor batches at the learning stage, we’ve added paddings to short sequences. For sequences in text format, 0 was reserved for padding, and for spectrograms, frames, the values of which were slightly lower than the minimum value of the spectrograms defined by us. This is recommended for separating these paddings from noise and silence.
+The decoder output from each step will be the predicted spectrogram. However, this is not the end. To improve the spectrogram quality, it is passed through the PostNet module, which is a stack of 5 one-dimensional convolutional layers with 512 filters in each and a filter size of 5. Each layer (except the last) is followed by batch-normalization and tangent activation. To return to the spectrogram dimension, we skip the output of the PostNet through a fully-connected layer with 80 neurons and add the obtained data to the initial result of the decoder. We then receive the Mel-spectrogram generated from the text.
+While working with seq2seq-models you will face the problem of different lengths of sequences in the batch. It is simply solved by adding paddings – reserved characters (in case of encoder input data), or frames with specific values (in case of a decoder). However, you should properly apply the error function to the predicted and real spectrograms. We used a mask in the error function for reading the errors excluding paddings.
+
+--- Example 2 ---
+Input:
+Generate a story for these personas: Developer, Researcher, Student
+
+Section: Introduction
+Introduction: 1. INTRODUCTION Generating natural speech from text (text-to-speech synthesis, TTS) remains a challenging task despite decades of investigation [1]. Over time, different techniques have dominated the field. Concatenative synthesis with unit selection, the process of stitching small units of pre-recorded waveforms together [2, 3] was the state-of-the-art for many years. Statistical parametric speech synthesis [4, 5, 6, 7], which directly generates smooth trajectories of speech features to be synthesized by a vocoder, followed, solving many of the issues that concatenative synthesis had with boundary artifacts. However, the audio produced by these systems often sounds muffled and unnatural compared to human speech. WaveNet [8], a generative model of time domain waveforms, produces audio quality that begins to rival that of real human speech and is already used in some complete TTS systems [9, 10, 11]. The inputs to WaveNet (linguistic features, predicted log fundamental frequency (F0), and phoneme durations), however, require significant domain expertise to produce, involving elaborate text-analysis systems as well as a robust lexicon (pronunciation guide). Tacotron [12], a sequence-to-sequence architecture [13] for producing magnitude spectrograms from a sequence of characters, simplifies the traditional speech synthesis pipeline by replacing the production of these linguistic and acoustic features with a single neural network trained from data alone. To vocode the resulting magnitude spectrograms, Tacotron uses the Griffin-Lim algorithm [14] for phase estimation, followed by an inverse short-time Fourier transform. As the authors note, this was simply a placeholder for future neural vocoder approaches, as Griffin-Lim produces characteristic artifacts and lower audio quality than approaches like WaveNet. In this paper, we describe a unified, entirely neural approach to speech synthesis that combines the best of the previous approaches: a sequence-to-sequence Tacotron-style model [12] that generates mel spectrograms, followed by a modified WaveNet vocoder [10, 15]. Trained directly on normalized character sequences and corresponding speech waveforms, our model learns to synthesize natural sounding speech that is difficult to distinguish from real human speech. Deep Voice 3 [11] describes a similar approach. However, unlike our system, its naturalness has not been shown to rival that of human speech. Char2Wav [16] describes yet another similar approach to end-to-end TTS using a neural vocoder. However, they use different intermediate representations (traditional vocoder features) and their model architecture differs significantly.
+
+Output generated:
+A neural vocoder is a neural model that generates speech from text.
+
+Output correct:
+Conventional Text-to-Speech Approaches
+The task of computer speech synthesis has long been the focus of scientists and engineers. However, classic approaches do not synthesize speech indistinguishable from that of a human. That is why, here, as in many other areas, deep learning has come to the rescue.
+This method is based on the pre-recording of short audio sequences, which are then combined to create coherent speech. It turns out very clean and clear but is absolutely devoid of emotion and tone components, so it sounds unnatural. This happens because it is impossible to get an audio recording of all possible words uttered in all possible combinations of emotions and prosody.
+The use of the concatenated TTS method is limited due to a large amount of data and enormous development time required. Therefore, a statistical parametric speech synthesis method, which explores the very nature of the data, was developed. It generates speech by combining certain parameters such as frequency, amplitude spectrum, etc.
+Parametric synthesis consists of two stages:
+These manually-configured parameters, along with linguistic features, are transmitted to the vocoder model, which performs many complex transformations to generate a sound wave. In this case, the vocoder evaluates speech parameters such as phase, prosody, tone, and others.
+If we can approximate the parameters that define speech on each of its samples, then we can create a parametric model. Parametric synthesis requires less data and effort than concatenative systems.
+Theoretically, parametric synthesis is simple, but in practice, there are many artifacts that lead to the production of muffled speech with a buzzing sidetone, which sounds unnatural. This is happening because at each stage of the synthesis, we encode some features to achieve a realistic speech production. However, the selected data is based on our understanding of the speech, and in fact, human knowledge is not entirely comprehensive so the selected features will not necessarily be the best fit for any situation. Here is where deep learning takes the stage.
+F is a convolution operation,
+
+--- Example 3 ---
+Input:
+Generate a story for these personas: Developer, Researcher, Student
+
+Section: Method

@@ -1,0 +1,7 @@
+{
+  "rouge1": 0.1239,
+  "rouge2": 0.0246,
+  "rougeL": 0.0817,
+  "bleu": 0.0039,
+  "notes": "QLoRA(4b)+LoRA, outputs still short."
+}

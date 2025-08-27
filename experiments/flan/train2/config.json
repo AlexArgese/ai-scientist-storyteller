@@ -1,0 +1,24 @@
+{
+  "run": "flan-t5_training2",
+  "base_model": "google/flan-t5-xl",
+  "finetuning": "QLoRA (4-bit) + LoRA",
+  "lora": { "r": 16, "alpha": 32, "dropout": 0.1 },
+  "quantization": { "bits": 4, "type": "nf4", "compute_dtype": "bfloat16" },
+  "epochs": 3,
+  "learning_rate": 1e-4,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "effective_batch_size": 8,
+  "max_source_length": 1024,
+  "max_target_length": 1024,
+  "tokenizer": "t5-standard",
+  "dataset": {
+    "train": "../../datasets/flan_story_v1/train_ready_trunc.json",
+    "test":  "../../datasets/flan_story_v1/test_ready_trunc.json",
+    "samples": "../../data-samples/flan_story_v1/"
+  },
+  "evaluation": {
+    "artifacts": ["samples/results_head.txt"],
+    "metrics": ["ROUGE-1","ROUGE-2","ROUGE-L","BLEU"]
+  }
+}
