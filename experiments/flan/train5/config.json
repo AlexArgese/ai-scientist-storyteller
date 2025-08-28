@@ -1,0 +1,43 @@
+{
+  "run": "flan-t5_training5",
+  "base_model": "google/flan-t5-large",
+  "finetuning": "QLoRA + LoRA",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["q","k","v","o","wi","wo"]
+  },
+  "quantization": "4-bit NF4 (double quant), bf16 compute",
+  "gradient_checkpointing": true,
+  "epochs": 20,
+  "early_stopping": {
+    "patience": 3,
+    "metric": "0.7 * ROUGE-L + 0.3 * (BLEU/100)"
+  },
+  "optimizer": {
+    "lr": 2e-4,
+    "weight_decay": 0.01,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03
+  },
+  "batching": {
+    "per_device_train_batch_size": 2,
+    "grad_accumulation": 8,
+    "effective_batch_size": 16
+  },
+  "tokenization": {
+    "max_source_length": 768,
+    "max_target_length": 384
+  },
+  "dataset_split": {
+    "train": 1662,
+    "validation": 204,
+    "strategy": "grouped by id_story (10% val split)"
+  },
+  "generation_eval": {
+    "max_len": 360,
+    "num_beams": 4
+  },
+  "prompt_style": "AI Scientist Storyteller (training == inference)"
+}

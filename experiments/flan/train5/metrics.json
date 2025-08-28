@@ -1,0 +1,8 @@
+{
+  "rouge1": 0.1967,
+  "rouge2": 0.0349,
+  "rougeL": 0.1262,
+  "bleu": 0.0190,
+  "bertscore_f1": -0.189,
+  "notes": "Train loss ~3.19 -> ~1.43. Early stopped ~epoch 19 (patience=3) using composite metric 0.7*ROUGE-L + 0.3*(BLEU/100). Training and inference prompts are identical; qualitative alignment improves vs T1–T4 but automatic metrics remain modest."
+}

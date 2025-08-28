@@ -39,6 +39,11 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 - Metrics: ROUGE/BLEU = 0, eval loss ≈ 10.37 (collapse).  
 - Artifacts: `experiments/flan/train4/` (scripts + samples).
 
+**Training 5 (QLoRA+LoRA, flan-t5-large; training==inference prompts)**  
+- Epochs: ~20 (early-stopped ≈19), LR=2e-4, eff. batch=16, src/tgt=768/384.  
+- Metrics (test): ROUGE-1 0.197, ROUGE-2 0.035, ROUGE-L 0.126, BLEU 1.90, BERTScore-F1 −0.189.  
+- Artifacts: `experiments/flan/train5/` (scripts, config, metrics, eval, outputs).
+
 **Raw baseline (no fine-tuning, flan-t5-large)**  
 - Decoding: temp=0.0, top_p=1.0, max_in=480, max_new=360, min_new=140.  
 - Paper: VesselVerse; sections: Intro/Methods/Results/Conclusion.  
