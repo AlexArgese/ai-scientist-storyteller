@@ -1,0 +1,8 @@
+{
+  "rouge1": 0.218,
+  "rouge2": 0.039,
+  "rougeL": 0.119,
+  "bleu": 0.019,
+  "bertscore_f1": -0.128,
+  "notes": "Quality variable; ~1 useful output every 10–15 generations; sections sometimes repetitive/off-topic."
+}

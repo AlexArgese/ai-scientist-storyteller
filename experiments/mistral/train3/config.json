@@ -1,0 +1,11 @@
+{
+  "run": "mistral_training3",
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "finetuning": "LoRA",
+  "epochs_max": 12,
+  "early_stopping": "loss + semantic (ROUGE/BLEU/BERTScore) on validation",
+  "dataset": "full papers + stories (JSONL)",
+  "train_set": "datasets/mistral_story_v3/train.jsonl",
+  "val_set": "datasets/mistral_story_v3/val.jsonl",
+  "notes": "Goal: improve coherence, relevance, and section length allocation."
+}
