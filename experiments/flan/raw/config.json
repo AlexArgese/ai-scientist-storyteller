@@ -1,0 +1,22 @@
+{
+  "run": "flan-t5_raw_baseline",
+  "base_model": "google/flan-t5-large",
+  "finetuning": "none (raw model)",
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_input_tokens": 480,
+    "max_new_tokens": 360,
+    "min_new_tokens": 140,
+    "do_sample": false
+  },
+  "dataset": {
+    "paper": "VesselVerse",
+    "sections": ["Introduction", "Methods (inferred)", "Results (Validation)", "Conclusion"]
+  },
+  "artifacts": {
+    "samples_dir": "experiments/flan/raw/samples",
+    "script": "scripts/flan_t5_raw_infer.py",
+    "raw_jsonl": "experiments/flan/raw/samples/results_last4.jsonl"
+  }
+}

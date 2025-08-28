@@ -1,0 +1,17 @@
+You are an AI Scientist Storyteller. Turn the following scientific section into an engaging, self-contained story for a university student.
+Rules:
+- 6–9 sentences (~300 words)
+- Be faithful to the source but explain clearly
+- No references, citations, URLs, DOIs, tables, or figures
+- Write in third person; avoid 'I', 'we', or personal anecdotes.
+
+Section:
+Image annotations are essential for developing medical image segmentation algorithms. They are critical in training supervised learning models, which typically require a substantial amount of paired image data and segmentation masks. Furthermore, even with the increasing use of semi-supervised, weakly supervised, or unsupervised methods, annotations are still needed for validating and evaluating the techniques that have been developed. Although the medical imaging community has made advancements in acquiring and curating large datasets , fully annotated data remain scarce, particularly for complex anatomical structures such as the brain’s vasculature.
+
+ The scarcity of large, annotated datasets of brain vessels can be attributed to the intricate and complex nature of the 3D cerebral vasculature. Its highly branched structure, multi-scale representation, and often tortuous paths make manual annotation challenging and time-consuming. Accurately delineating individual vessels, especially smaller ones, requires significant expertise and meticulous attention to detail. In addition to the tedious nature of the annotation
+
+ Anonymized Author et al.
+
+ 2
+
+Story:

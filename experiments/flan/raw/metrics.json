@@ -1,0 +1,44 @@
+{
+  "by_section": [
+    {
+      "section": "Introduction",
+      "rouge1": 0.6515151515151515,
+      "rouge2": 0.5190839694656488,
+      "rougeL": 0.43939393939393945,
+      "bleu": 35.01038612290018,
+      "bertscore_f1": 0.42015114426612854
+    },
+    {
+      "section": "Methods (inferred)",
+      "rouge1": 0.1903914590747331,
+      "rouge2": 0.0944741532976827,
+      "rougeL": 0.10676156583629892,
+      "bleu": 0.010213652151582892,
+      "bertscore_f1": 0.15812861919403076
+    },
+    {
+      "section": "Results (Validation)",
+      "rouge1": 0.5299145299145298,
+      "rouge2": 0.2931034482758621,
+      "rougeL": 0.2564102564102564,
+      "bleu": 19.422178747717034,
+      "bertscore_f1": 0.27762627601623535
+    },
+    {
+      "section": "Conclusion",
+      "rouge1": 0.5590062111801243,
+      "rouge2": 0.43125,
+      "rougeL": 0.3850931677018633,
+      "bleu": 17.73286014539164,
+      "bertscore_f1": 0.41611379384994507
+    }
+  ],
+  "macro_avg": {
+    "rouge1": 0.48270683792113467,
+    "rouge2": 0.33447789275979845,
+    "rougeL": 0.2969147323355895,
+    "bleu": 18.04390966704011,
+    "bertscore_f1": 0.31800495833158493
+  },
+  "notes": "Raw zero-shot baseline on VesselVerse sections. Strong lexical overlap on easy sections (Intro/Conclusion), weak on Methods."
+}

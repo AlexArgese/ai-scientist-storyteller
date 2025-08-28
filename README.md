@@ -39,6 +39,12 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 - Metrics: ROUGE/BLEU = 0, eval loss ≈ 10.37 (collapse).  
 - Artifacts: `experiments/flan/train4/` (scripts + samples).
 
+**Raw baseline (no fine-tuning, flan-t5-large)**  
+- Decoding: temp=0.0, top_p=1.0, max_in=480, max_new=360, min_new=140.  
+- Paper: VesselVerse; sections: Intro/Methods/Results/Conclusion.  
+- Macro-avg metrics: ROUGE-1 0.483, ROUGE-2 0.334, ROUGE-L 0.297, BLEU 18.04, BERTScore-F1 0.318.  
+- Artifacts: `experiments/flan/raw/`.
+
 
 ### Mistral
 **Training 1 (7B Instruct v0.2, LoRA)**  
@@ -50,6 +56,19 @@ Real datasets live in `datasets/` (not versioned). Small heads are provided unde
 - Early stopping at epoch 11 (loss only).  
 - Artifacts: `experiments/mistral/train2/`.
 
+**Training 3 (LoRA, v0.2, full dataset)**  
+- Stopping criterion: early stopping on **loss + semantic metrics** (ROUGE, BLEU, BERTScore).  
+- Goal: improve coherence, relevance, and section length allocation.  
+- Results: ≈1 useful output every 10–15 generations; section allocation poor, coherence still inconsistent.  
+- Artifacts: `experiments/mistral/train3/` (training script + inference variants: `scripts/mistral_train3.py`, `scripts/mistral_infer5_v4_train3.py`, `scripts/mistral_infer_new_train3.py`).
+
+**Training 4 (LoRA+QLoRA, v0.3, dataset reformulation)**  
+- Dataset: reformulated into two tasks — (1) logical section segmentation, (2) persona-conditioned story generation.  
+- Epochs: up to 12 with patience=3 (early stopping on loss + semantic metrics).  
+- LR=2e-4, eff. batch=64 (2×8 grad accum × 4 GPUs), max seq len: 4096.  
+- Metrics: composite ≈ 0.07 (ROUGE-L ~0.064, title overlap ~0.105, persona alignment ~0.05).  
+- Notes: best Mistral run so far — coherent, persona-aware stories; still some repetition and occasional drift.  
+- Artifacts: `experiments/mistral/train4/` (scripts, config, metrics, samples).
 
 
 ## Notes

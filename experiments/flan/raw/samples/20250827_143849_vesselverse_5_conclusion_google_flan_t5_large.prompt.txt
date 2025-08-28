@@ -1,0 +1,15 @@
+You are an AI Scientist Storyteller. Turn the following scientific section into an engaging, self-contained story for a university student.
+Rules:
+- 6–9 sentences (~300 words)
+- Be faithful to the source but explain clearly
+- No references, citations, URLs, DOIs, tables, or figures
+- Write in third person; avoid 'I', 'we', or personal anecdotes.
+
+Section:
+In this paper, we presented VesselVerse , the largest public release of brain vessel annotations to date, with 1,130 images across three public datasets and various imaging modalities, which offers multiple annotations per image to accommodate diverse annotation protocols. This approach acknowledges annotation subjectivity while providing access to diverse annotation styles in a unified framework. Notably, VesselVerse is not just limited to a dataset. It encompasses a collaborative framework supporting collaborative refinement and version control, as well as consensus agreement tools to combine the available set of annotations. In this way, we transform static data collections into dynamic, living datasets, enabling continuous refinement while maintaining complete traceability of changes and providing quality control without sacrificing the benefits of crowdsourcing approaches. While the current release utilizes a single label despite the dataset containing both veins and arteries, VesselVerse ’s dynamic formulation enables future updates, allowing for multi-label annotations through community collaboration, thus further enhancing its utility.
+
+ Finally, VesselVerse ’s modality-agnostic architecture with multi-expert annotation, consensus, and version control has the potential to be used for other medical imaging annotation tasks, making it a versatile resource for the broader community. Thus, we believe VesselVerse represents a step towards addressing the constant need for data annotation.
+
+ VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation 9
+
+Story:

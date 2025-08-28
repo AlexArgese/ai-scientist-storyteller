@@ -1,0 +1,39 @@
+You are an AI Scientist Storyteller. Turn the following scientific section into an engaging, self-contained story for a university student.
+Rules:
+- 6–9 sentences (~300 words)
+- Be faithful to the source but explain clearly
+- No references, citations, URLs, DOIs, tables, or figures
+- Write in third person; avoid 'I', 'we', or personal anecdotes.
+
+Section:
+process, differences in annotation protocols and the subjective interpretation of these protocols further complicate matters. Variations in how vessels are defined, the level of detail required, and the specific tools used can lead to discrepancies in vessel annotation , thus introducing inter-rater variability . As a result, comprehensive annotated datasets of the brain vessels are limited, often employ differing annotation protocols (see Table 1) and exhibit significant variations in the resulting annotations (Figure 1).
+
+ Crowdsourcing provides a promising solution for annotating large neurovascular imaging datasets while reducing annotator fatigue and errors by sharing the workload among experts. However, recent studies have raised concerns about the annotation quality achieved through crowdsourcing platforms . To fully benefit from crowdsourcing, the complex task of vessel annotation requires quality control mechanisms in place. These should include version control systems for tracking individual contributions, facilitating expert reviews, and consensus mechanisms for harmonizing different annotation styles and resolving discrepancies that arise from subjective interpretations of vessel boundaries.
+
+ VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation 3
+
+ Although version control systems are widely adopted in software development, their usage and integration into medical imaging annotated datasets remain limited. Open-access datasets propose final segmentation masks without tracking the evolution of annotations, and very few previous efforts offer mechanisms to integrate multiple expert annotations and refinements . Open-source tools like ITK-Snap or 3D Slicer provide advanced visualization and analysis but lack built-in version-controlled annotation workflows.
+
+ To address these limitations, we introduce VesselVerse , the largest release of brain vessel annotations to date, comprising three publicly available datasets totaling 1,130 annotated images from various neurovascular imaging modalities. VesselVerse also features a novel framework that systematically tracks annotation evolution, allows for multiple expert annotations and refinement, and integrates these through consensus generation. The VesselVerse dataset and framework can be accessed at VesselVerseDataset and VesselVerseFramework 1 .
+
+with 3D Slicer, making it suitable for medical images while offering consensus generation, version control, and multi-expert collaboration.
+
+The VesselVerse dataset is supported by a methodological framework for managing and improving vessel annotations over time quality through a combination of automated methods and expert-validated annotations. Figure 2 presents an overview of the framework, which consists of three components: (1) Expert annotations, (2) a STAPLE-based consensus mechanism that allows to combine multiple expert annotations, and (3) a version control system for tracking annotation evolution.
+
+Expert Annotations. VesselVerse manages multiple expert annotations for a single image, allowing for various annotation protocols within the same dataset. For instance, annotation protocols may vary in several aspects, including the criteria for establishing vessel contours (e.g., specific windowing-level values to set for visualization during annotation, inclusion/exclusion of calcifications), the types of vessels annotated (e.g., arteries only, veins only, or both), and the labeling conventions used (e.g., distinct labels for arteries and veins or a unique label). Similarly to the approach used by SMILE-UHURA , VesselVerse broadens the concept of expert annotators to encompass model-generated segmentations, thereby treating segmentations from any algorithm as expert-level annotations.
+
+ Consensus Generation. The VesselVerse framework provides a mechanism for generating consensus annotations (CA) that aggregate expert annotations from multiple sources. This functionality aims to offer an automated method for combining two or more available annotations, addressing situations where users are uncertain about which annotation set is most suitable. The consensus generation is based on STAPLE , a well-established expectation-maximization
+
+ VesselVerse: A Dataset and Collaborative Framework for Vessel Annotation 5
+
+ algorithm that, given n annotations associated with an image, computes a probabilistic estimate of the true annotation. In its E-step, STAPLE computes the sensitivity S e and specificity S p scores of each of the n annotations, representing the probability of correctly labeling a voxel as foreground and background, respectively. Subsequently, in its M-step, it updates a voxel-level probability map of consensus among the n annotations based on these parameters. The consensus annotation, which assigns lower weight to less accurate inputs, is ultimately obtained by thresholding the voxel values of the probability map after the EM algorithm’s convergence.
+
+ Version Control. It has been widely demonstrated that dataset labels are often prone to errors, which can destabilize the results of models trained using supervised learning . Public datasets currently do not provide mechanisms to report or correct identified annotation errors. VesselVerse addresses this by implementing collaborative refinement mechanisms that allow users to directly fix mistakes and refine annotations thanks to its integration as a 3D Slicer extension for vessel annotation revision. However, since refinement processes can inadvertently introduce new errors, VesselVerse also provides a version control system, making reverting to previous versions possible. Expert annotations in VesselVerse are systematically integrated into the version control system. Following expert correction and commit, each annotation is subjected to validation checks for annotation quality, verification of spatial consistency, metadata completeness, and version control compliance before final commitment to the repository.
+
+ Implementation Details. The VesselVerse framework is implemented as a 3D Slicer extension for vessel annotation revision, taking advantage of the advanced visualization and annotation tools. The extension provides version history visualization with metadata tracking. The version control system extends DVC with specialized structures for managing vessel annotations and their associated metadata. The framework implements three key components: (1) A hierarchical storage system that organizes images, corresponding expert annotations (each identified by a unique key), and version metadata into a structured directory tree. (2) A metadata tracking mechanism that maintains a comprehensive history for each annotation, including spatial properties, provenance information, expert annotations, and data integrity. (3) A secure multi-user collaboration protocol ensuring data integrity while enabling collaborative refinement by controlling access through credentialed authentication with distinct permissions for database access and contribution uploads. A comprehensive demo of the interface and its functionality is available in the supplementary material.
+
+The images. VesselVerse builds upon publicly available neurovascular imaging datasets. These are: IXI comprising 600 Time-of-Flight Magnetic Resonance Angiographies (TOF-MRA) collected across three different hospitals (GUYS, HH, IOP) in London, UK. TubeTK containing 100 T1–MRA image pairs from
+
+ 6 Anonymized Author et al.
+
+Story:
