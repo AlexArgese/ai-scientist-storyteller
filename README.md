@@ -8,6 +8,7 @@ This repository hosts the code and minimal artifacts for the **AI Scientist Stor
 ## Repository layout
 - `scripts/` — training/inference utilities.
 - `experiments/` — per-run metadata (config, tiny samples, metrics).
+- `final_infer_codes/` - Final infer scripts (SPLITTER + STORYTELLER)
 - `datasets/` — **local** datasets (ignored by git).
 - `data-samples/` — tiny text snippets for reproducibility.
 - `outputs/` — demo outputs (small).
