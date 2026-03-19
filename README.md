@@ -7,6 +7,7 @@ This repository hosts the code and minimal artifacts for the **AI Scientist Stor
 - curated experiment metadata (no large checkpoints).
 
 Web-app based on this method: https://github.com/AlexArgese/SciTeller/
+
 StoryScore implementation: https://github.com/AlexArgese/SciTeller/blob/main/backend/compute_story_score.py
 
 ## Repository layout
