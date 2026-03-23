@@ -3,8 +3,8 @@
 This repository is the main entry point of the outcomes of the **AI Scientist Storyteller** project.
 
 The project includes:
-* The (**SciTeller**)[https://github.com/AlexArgese/SciTeller/] web app - [demo](https://sciteller.tools.eurecom.fr/) 
-* The (**StoryScore**)[https://github.com/D2KLab/StoryScore]
+* The [**SciTeller**](https://github.com/AlexArgese/SciTeller/) web app - [demo](https://sciteller.tools.eurecom.fr/) 
+* The [**StoryScore**](https://github.com/D2KLab/StoryScore)
 * Several experiments included in this repository
 
 This repository hosts the code and minimal artifacts for: 
