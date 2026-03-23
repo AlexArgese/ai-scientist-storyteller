@@ -1,14 +1,17 @@
 # AI Scientist Storyteller — Experiments & Prototype
 
-This repository hosts the code and minimal artifacts for the **AI Scientist Storyteller** project:
+This repository is the main entry point of the outcomes of the **AI Scientist Storyteller** project.
 
+The project includes:
+* The (**SciTeller**)[https://github.com/AlexArgese/SciTeller/] web app - [demo](https://sciteller.tools.eurecom.fr/) 
+* The (**StoryScore**)[https://github.com/D2KLab/StoryScore]
+* Several experiments included in this repository
+
+This repository hosts the code and minimal artifacts for: 
 - training & evaluation scripts for Flan-T5 and Mistral,
 - prompt templates and inference utilities,
 - curated experiment metadata (no large checkpoints).
 
-Web-app based on this method: https://github.com/AlexArgese/SciTeller/
-
-StoryScore implementation: https://github.com/AlexArgese/SciTeller/blob/main/backend/compute_story_score.py
 
 ## Repository layout
 
